@@ -1,0 +1,11 @@
+﻿.table-td {
+    text-align: -webkit-center;
+
+    .form-check-input{
+        position: relative;
+        margin: unset;
+    }
+}
+.table-th{
+    text-align: -webkit-center;
+}

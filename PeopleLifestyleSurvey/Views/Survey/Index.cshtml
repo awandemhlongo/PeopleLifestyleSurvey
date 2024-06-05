@@ -1,0 +1,108 @@
+﻿@model Survey
+
+<div class="container-fluid mt-5">
+    <h1 class="mb-4">Survey</h1>
+    @if (ViewBag.SuccessMessage != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.SuccessMessage
+        </div>
+        <script>
+            clearForm();
+        </script>
+    }
+    <form id="surveyForm" asp-action="Submit" method="post" onsubmit="return validateForm()">
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="FullName">Full Name:</label>
+                <input type="text" class="form-control" id="FullName" name="FullName" required />
+            </div>
+            <div class="col-md-6 form-group">
+                <label for="Email">Email:</label>
+                <input type="email" class="form-control" id="Email" name="Email" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="DateOfBirth">Date of Birth:</label>
+                <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" required />
+            </div>
+            <div class="col-md-6 form-group">
+                <label for="ContactNumber">Contact Number:</label>
+                <input type="tel" class="form-control" id="ContactNumber" name="ContactNumber" required />
+            </div>
+        </div>
+
+        <h3 class="mt-4">Favourite Food</h3>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="LikesPizza" name="LikesPizza" value="true" />
+            <label class="form-check-label" for="LikesPizza">Pizza</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="LikesPasta" name="LikesPasta" value="true" />
+            <label class="form-check-label" for="LikesPasta">Pasta</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="LikesPapAndWors" name="LikesPapAndWors" value="true" />
+            <label class="form-check-label" for="LikesPapAndWors">Pap and Wors</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="LikesOther" name="LikesOther" value="true" />
+            <label class="form-check-label" for="LikesOther">Other</label>
+        </div>
+
+        <h3 class="mt-4">Rate your preferences</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th class="table-th">1</th>
+                    <th class="table-th">2</th>
+                    <th class="table-th">3</th>
+                    <th class="table-th">4</th>
+                    <th class="table-th">5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>I like to watch movies</td>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <td class="table-td">
+                            <input type="radio" class="form-check-input" name="MoviesRating" value="@i" required />
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    <td>I like to listen to radio</td>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <td class="table-td">
+                            <input type="radio" class="form-check-input" name="RadioRating" value="@i" required />
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    <td>I like to eat out</td>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <td class="table-td">
+                            <input type="radio" class="form-check-input" name="EatOutRating" value="@i" required />
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    <td>I like to watch TV</td>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <td class="table-td">
+                            <input type="radio" class="form-check-input" name="TvRating" value="@i" required />
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

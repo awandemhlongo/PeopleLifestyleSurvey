@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Results</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+</head>
+<body>
+    <div class="container-fluid mt-5">
+        <h1 class="mb-4">Survey Results</h1>
+        @if (ViewBag.Message != null)
+        {
+            <p>@ViewBag.Message</p>
+        }
+        else
+        {
+            <p>Total Surveys Completed: @ViewBag.TotalSurveys</p>
+            <p>Average Age: @ViewBag.AverageAge</p>
+            <p>Oldest Person Age: @ViewBag.OldestPersonAge</p>
+            <p>Youngest Person Age: @ViewBag.YoungestPersonAge</p>
+            <p>Percentage of People Who Like Pizza: @ViewBag.PizzaPercentage%</p>
+            <p>Average Rating for Eating Out: @ViewBag.EatOutAverage</p>
+        }
+    </div>
+</body>
+</html>
