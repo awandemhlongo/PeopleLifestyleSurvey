@@ -27,5 +27,5 @@ The People Lifestyle Survey Application is a web-based platform designed to coll
 ### Installation
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourgithubusername/people-lifestyle-survey.git
+   git clone 
    cd people-lifestyle-survey
